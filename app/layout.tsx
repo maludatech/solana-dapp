@@ -3,6 +3,7 @@ import AppWalletProvider from "@/components/AppWalletProvider";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { APP_NAME, APP_SLOGAN, APP_DESCRIPTION } from "@/libs/constants";
+import { Navbar } from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AppWalletProvider>{children}</AppWalletProvider>
+        <AppWalletProvider>
+          <Navbar />
+          {children}
+        </AppWalletProvider>
       </body>
     </html>
   );
